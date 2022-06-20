@@ -1,5 +1,4 @@
-async function getUsers() {
-    let url = 'https://randomuser.me/api?results=50';
+async function getUsers() { 
     try {
         let res = await fetch(url);
         return await res.json();
@@ -10,7 +9,8 @@ async function getUsers() {
 async function renderUsers() {
     let users = await getUsers();
     let html = '';
-    users.forEach(user => {
+    let url =  'https://randomuser.me/api?results=50' ;
+    url.forEach(user => {
         let htmlSegment = `<div class="user">
                             <img src="${user.picture.large}" >
                             <h2>${user.name.first} ${user.name.last}</h2>
